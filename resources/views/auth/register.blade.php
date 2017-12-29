@@ -105,7 +105,7 @@
                             <label for="roll" class="col-md-4 control-label">Roll</label>
 
                             <div class="col-md-6">
-                                <input id="roll" type="text" class="form-control" name="roll" value="{{ old('roll') }}">
+                                {{ Form::select('roll', ['Admin', 'Cajero']) }}  
 
                                 @if ($errors->has(''))
                                     <span class="help-block">
