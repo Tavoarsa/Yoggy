@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Yoggy</title>
+	<title>Yoggy Ema94</title>
 </head>
 <body>
 
