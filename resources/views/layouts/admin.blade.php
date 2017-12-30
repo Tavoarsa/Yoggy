@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+<<<<<<< HEAD
     <link rel="stylesheet" href="../public/css/style.css">
 
 	<title>Yoggy Ema94</title>
@@ -53,10 +54,43 @@
     </nav>
 
     @yield('content')
+=======
+<title>Admin YoggyFrozen</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+
+
+</head>
+
+<body id="myPage" data-spy="scroll" data-target=".navbar" data-offset="60">
+@if(\Session::has('message'))
+        @include('partials.message')
+ @endif
+<!-- Fixed navbar -->
+    
+
+
+@yield('content')
+
+>>>>>>> 63e29140794e4e9630ed6e7a6c3877d37391ca9f
 
     <!-- JavaScripts -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.3/jquery.min.js" integrity="sha384-I6F5OKECLVtK/BL+8iSLDEHowSAfUo76ZL9+kGAgTRdiByINKJaqTPH/QVNS1VDb" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
     {{-- <script src="{{ elixir('js/app.js') }}"></script> --}}
 </body>
+<!-- /Contact-Form -->
+<!-- Footer -->
+<footer class="text-center slideanim slide">
+ 
+</footer>
+<!-- js files -->
+
+
+
+
+
+</body>
 </html>
+

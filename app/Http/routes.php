@@ -10,11 +10,30 @@
 | and give it the controller to call when that URI is requested.
 |
 */
-
+Route::group(['middleware' => ['web']], function () {
 Route::get('/', function () {
     return view('/');
 });
 
+
+
+
+Route::group(['middleware' => 'auth'], function () 
+{
+	Route::group(['middleware' => 'admin'], function () 
+{
+	
+	Route::get('user',[
+
+	  'as'=>'admin.user.index',
+	  'uses'=>'UserController@index'
+	]);
+	});
+
+});
+
+
+});
 Route::auth();
 
 Route::get('/home', 'HomeController@index');
