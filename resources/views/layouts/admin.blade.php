@@ -3,14 +3,20 @@
 <head>
      <!-- Fonts -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css" integrity="sha384-XdYbMnZ/QjLh6iI4ogqCTaIjrFk87ip+ekIjefZch0Y+PvJ8CDYtEs1ipDmPorQ+" crossorigin="anonymous">
+    
     <!-- Styles -->
+       <link rel="stylesheet" type="text/css" href="{{asset('css/style.css')}}"/>    
+
+
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
-     <link rel="stylesheet" href="./public/css/style.css">
+    
         <!-- Angular -->
+    
      <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.23/angular.min.js"></script>
 </head>
 <body id="app-layout">
-    <nav class="navbar navbar-default navbar-static-top">
+    <nav id="navbar_P"  class="NavStyle navbar navbar-default navbar-static-top">
         <div class="container">
             <div class="navbar-header">
 
@@ -24,13 +30,13 @@
 
                 <!-- Branding Image -->
                 <a class="navbar-brand" href="{{ url('/') }}">
-                    Administracion
+                    Administracion 
                 </a>
             </div>
 
-            <div class="collapse navbar-collapse" id="app-navbar-collapse">
+            <div class=" narvar collapse navbar-collapse" id="Navbar">
                 <!-- Left Side Of Navbar -->
-                <ul class="nav navbar-nav">
+                <ul class="narvar  nav navbar-nav">
                     <li><a href="">Proveedores</a></li>
                 </ul>
                 <ul class="nav navbar-nav">
@@ -72,8 +78,7 @@
             </div>
         </div>
     </nav>
-
-    @yield('content')
+  @yield('content')
 
 </body>
 <!-- Footer -->
