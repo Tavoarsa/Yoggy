@@ -1,4 +1,5 @@
-@extends('layouts.app')
+@extends('layouts.admin')
+
 
 @section('content')
 <div class="container">
@@ -40,11 +41,9 @@
 
                         <div class="form-group">
                             <div class="col-md-6 col-md-offset-4">
-                                <div class="checkbox">
                                     <label>
                                         <input type="checkbox" name="remember"> Recordar
                                     </label>
-                                </div>
                             </div>
                         </div>
 

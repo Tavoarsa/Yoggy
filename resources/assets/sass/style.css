@@ -1,14 +1,13 @@
 
 body {
-    background: black; 
-}
-.navbar_P{
-    background-color: #902929;
-    color: blue;
+  /* background: url('imagen/PORTADA_YOGGY.jpg');
+    */
+background: black;
+red
 }
 
-.Navbar{
-       background-color: red;
+ .narvar{
+    color: red;
  }
  #NavStyle{
     background-color: red;
@@ -48,7 +47,27 @@ body {
   border-color: #4d90fe;
 }
 
+.pac-container {
+  font-family: Roboto;
+}
+
+#type-selector {
+  color: #fff;
+  background-color: #4d90fe;
+  padding: 5px 11px 0px 11px;
+}
+
+#type-selector label {
+  font-family: Roboto;
+  font-size: 13px;
+  font-weight: 300;
+}
+
 -------------------------------------------------------
+html {
+    height: 100%;
+}
+
 ul {
     display: flex;
     list-style: none;
@@ -85,7 +104,6 @@ background:#5c7a75;
     -moz-box-shadow: 4px 0px 8px 0px rgba(121, 17, 17, 0.75);
     box-shadow:  -1px 5px 9px 2px rgba(245, 242, 242, 0.75)
 }
-
 .subheader{
 color: white;
 
@@ -161,6 +179,19 @@ li a {
     -moz-box-shadow: -3px 0px 8px 0px rgba(121, 17, 17, 0.75);
     box-shadow: -1px 5px 9px 2px rgba(245, 242, 242, 0.75);
 }
+#mesage {
+    /* position: absolute; */
+    color: rgb(255, 255, 255);
+    /* display: flex; */
+    padding: 20px;
+    background: rgb(170, 23, 23);
+}
+.content-welcome {
+    /* width: 774px; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
 section.hello-container {
     /* width: 800px; */
     justify-content: center;
@@ -173,6 +204,18 @@ section.hello-container {
     color: white;
     background:  rgba(255, 152, 0, 0.91);
 }
+}
+.items-hello h1 {
+    padding: 20px;
+    margin: 0px;
+    font-size: 70px;
+}
+.items-hello h4 {
+    letter-spacing: 10px;
+    text-transform: uppercase;
+}
+section.container.search-rides-container {
+    justify-content: center;
 }
 form.container-search-ride {
     width: 500px;
@@ -214,7 +257,20 @@ form.container-search-ride {
     display: flex;
     justify-content: center;
 }
-
+section.containerDisplayMap {
+    width: 100%;
+}
+section#window-login, #window-signin, #window-confirmation, #window-show-ride, #map {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    left: 0px;
+    background: rgba(105, 31, 31, 0.39);
+    height: 100%;
+    width: 100%;
+    transition: 0.8s;
+}
 .data-user-container {
     display: flex;
     align-items: center;
@@ -627,7 +683,10 @@ and also iPads specifically.
         letter-spacing: 5px;
     }
 }
-
+.actions .table-btns.delete:hover, .actions .table-btns.update:hover, .actions .table-btns.show-ride:hover {
+    border-color: #f1f1f1;
+    transition: 0.7s;
+}
 .actions .table-btns.delete {
     background: url('images/delete.png');
     background-size: cover;
@@ -941,4 +1000,22 @@ h4#show-ride-name {
     line-height: 30px;
     padding-left: 10px;
 }
+.cover-popup.map-info-ride {
+    top: 10%;
+    width: 85%;
+}
+div#window-show-ride {
+    background: #989898;
+    align-items: stretch;
+}
+.popup-container.ride-cont-info {
+    width: 100%;
+}
+
+----------------------------------------------------------------
+.sub-he{
+text-align: center;
+background: black;  
+}
+
 
