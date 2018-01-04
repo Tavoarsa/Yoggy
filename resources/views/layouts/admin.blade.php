@@ -37,7 +37,7 @@
                     <li><a href="">Productos</a></li>
                 </ul>
                 <ul class="nav navbar-nav">
-                    <li><a href="">Usuarios</a></li>
+                    <li><a href="{{ route('user_index') }}">Usuarios</a></li>
                 </ul>
                 <ul class="nav navbar-nav">
                     <li><a href="">Clientes</a></li>
