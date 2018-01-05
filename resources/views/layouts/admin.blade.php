@@ -17,7 +17,8 @@
     
      <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.23/angular.min.js"></script>
 </head>
-<body id="app-layout">
+<body >
+
     <nav id="navbar_P"  class="NavStyle navbar navbar-default navbar-static-top">
         <div class="container">
             <div class="navbar-header">

@@ -5,7 +5,10 @@
 <div class="container text-center">
         <div class="page-header">
             <h1>            
-                <i class="fa fa-plus-circle"></i> Usuario              
+                <i class="fa fa-user" aria-hidden="true"></i>Usuario
+                  <a href="{{ route('user.create') }}" class="btn btn-warning">
+                    <i class="fa fa-plus-circle"></i> Usuario
+                </a>              
             </h1>
         </div>
         
@@ -15,8 +18,7 @@
                 <table class="table table-striped table-bordered table-hover">
                     <thead>
                         <tr>
-                            <th>Editar</th>
-                           
+                            <th>Editar</th>                           
                             <th>Nombre</th>
                             <th>Apellidos</th>
                             <th>Usuario</th>
@@ -29,14 +31,14 @@
                         @foreach($users as $user)
                             <tr>
                                 <td>
-                                    <a href="{{ route('user_edit', $user->id) }}" class="btn btn-primary">
+                                    <a href="{{ route('user.edit', $user) }}" class="btn btn-primary">
                                         <i class="fa fa-pencil-square-o"></i>
                                     </a>
                                 </td>                              
                                 <td>{{ $user->first_name }}</td>
                                 <td>{{ $user->last_name }}</td>
                                 <td>{{ $user->username }}</td>
-                                <td>{{ $user->email }}</td>
+                                <td>{{ $user->email}}</td>
                                 <td>{{ $user->status==0 ? "Activo" : "Inactivo" }}</td>
                                 <td>{{ $user->roll == 0 ? "Admin" : "Cajero" }}</td>
                             </tr>
@@ -55,8 +57,5 @@
         </div>
     </div>
 @endsection
-<<<<<<< HEAD
 
-=======
->>>>>>> 31a1061d6216d465cc32ca68f9876af539cabf93
 

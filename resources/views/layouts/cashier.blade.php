@@ -49,11 +49,15 @@
                 </ul>
                 <ul class="nav navbar-nav">
                     <li><a href="">Clientes</a></li>
-                </ul>
-            
+                </ul>   
+
+                 @if(Auth::user()->roll==0)  
+
                 <ul class="nav navbar-nav">
                     <li><a href="{{ route('admin') }}">Herramienta</a></li>
                 </ul>
+                
+                @endif
               
 
                 <!-- Right Side Of Navbar -->

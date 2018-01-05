@@ -1,25 +1,45 @@
-    @extends('layouts.admin')
+@extends('layouts.admin')
 
 @section('content')
+
 <div class="container text-center">
 		<div class="page-header">
 			<h1>
-				<i class="fa fa-shopping-cart"></i>
-				Usuarios <small>[Editar producto]</small>
+				<i class="fa fa-pencil" aria-hidden="true"></i>
+				Usuarios <small>[Editar Usuario]</small>
+                  @if (count($errors) > 0)
+                        @include('partials.errors')
+                    @endif                  
+                 
 			</h1>
 		</div>
 
 		<div class="row">
             <div class="col-md-offset-3 col-md-6">
                 
-                <div class="page">
-                    
+                <div class="page"> 
+
                  
                     
-                    {!! Form::model($users, array('route' => array('admin.user.update', $users->id))) !!}
+                    {!! Form::model($user, array('route' => array('user.update', $user))) !!}
                     
                         <input type="hidden" name="_method" value="PUT">
-                    
+
+                        <div class="form-group">
+                            <label for="username">Nombre de Usuario:</label>
+                            
+                            {!! 
+                                Form::text(
+                                    'username', 
+                                    null, 
+                                    array(
+                                        'class'=>'form-control',
+                                        'placeholder' => 'Ingresa el nombre de Usuario...',
+                                        'autofocus' => 'autofocus'
+                                    )
+                                ) 
+                            !!}
+                        </div>                   
                       
         
                         <div class="form-group">
@@ -27,55 +47,34 @@
                             
                             {!! 
                                 Form::text(
-                                    'name', 
+                                    'first_name', 
                                     null, 
                                     array(
                                         'class'=>'form-control',
-                                        'placeholder' => 'Ingresa el nombre...',
-                                        'autofocus' => 'autofocus'
+                                        'placeholder' => 'Ingresa el nombre...'
+                                        
                                     )
                                 ) 
                             !!}
-                        </div>
-                        
-                     
+                        </div>               
                         
                         <div class="form-group">
                             <label for="last_name">Apellidos:</label>
                             
                             {!! 
-                                Form::textarea(
+                                Form::text(
                                     'last_name', 
                                     null, 
                                     array(
-                                        'class'=>'form-control'
-                                    )
-                                ) 
-                            !!}
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="username">Nombre de Usuario:</label>
-                            
-                            {!! 
-                                Form::number(
-                                    'username', 
-                                    null, 
-                                    array(
                                         'class'=>'form-control',
-                                        'placeholder' => 'Ingresa el nombre de Usuario...',
+                                         'placeholder' => 'Ingresa los apellidos...'
+                                        
                                     )
                                 ) 
                             !!}
-                        </div>
+                        </div>   
 
-                        <div class="form-group">
-                            <label for="type">Tipo:</label>
-                            
-                            {!! Form::radio('type', 'user', $user->type=='user' ? true : false) !!} User
-                            {!! Form::radio('type', 'admin', $user->type=='admin' ? true : false) !!} Admin
-                        </div>
-                        <div class="form-group">
+                         <div class="form-group">
                             <label for="email">Correo:</label>
                             
                             {!! 
@@ -89,7 +88,54 @@
                                     )
                                 ) 
                             !!}
+                        </div>     
+
+                        <div class="form-group">
+                            <label for="phone">Telefono:</label>
+                            
+                            {!! 
+                                Form::text(
+                                    'phone', 
+                                    null, 
+                                    array(
+                                        'class'=>'form-control',
+                                        'placeholder' => 'Ingresa el telefono...',
+                                        //'required' => 'required'
+                                    )
+                                ) 
+                            !!}
+                        </div> 
+
+                        <div class="form-group">
+                            <label for="status">Status:</label>
+                            
+                            {!! Form::radio('status', '0', $user->status=='0' ? true : false) !!} Activo
+                            {!! Form::radio('status', '1', $user->status=='1' ? true : false) !!} Inactivo
                         </div>
+
+                         <div class="form-group">
+                            <label for="address">Dirección:</label>
+                            
+                            {!! 
+                                Form::text(
+                                    'address', 
+                                    null, 
+                                    array(
+                                        'class'=>'form-control',
+                                        'placeholder' => 'Ingresa la dirección...',
+                                        //'required' => 'required'
+                                    )
+                                ) 
+                            !!}
+                        </div> 
+
+                       <div class="form-group">
+                            <label for="roll">Roll:</label>
+                            
+                            {!! Form::radio('roll', '0', $user->roll=='0' ? true : false) !!} Admin
+                            {!! Form::radio('roll', '1', $user->roll=='1' ? true : false) !!} Cajero
+                        </div>
+                    
 
                          <fieldset>
                             <legend>Cambiar password:</legend>
@@ -126,7 +172,7 @@
                         
                         <div class="form-group">
                             {!! Form::submit('Actualizar', array('class'=>'btn btn-primary')) !!}
-                            <a href="" class="btn btn-warning">Cancelar</a>
+                            <a href="{{ route('user_index') }}" class="btn btn-warning">Cancelar</a>
                         </div>
                     
                     {!! Form::close() !!}
@@ -134,8 +180,8 @@
                 </div>
                 
             </div>
-        </div>
-        
+
+        </div>       
 
 	</div>
     
