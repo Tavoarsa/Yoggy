@@ -32,6 +32,7 @@
             <div class="collapse navbar-collapse" id="Navbar">
                 <!-- Left Side Of Navbar -->
 
+
                 <a class="nav navbar-nav" href="{{ url('/yoggy') }}">
                     <div id="logo" class="stylesLogo logo-img">
                         <img id="productos" class="imagenPerfil" src="/imagen/ice-cream1.png" >
@@ -50,6 +51,43 @@
                         <h4 class="subtitle_Tpv">TPV</h4>
                     </div>
                 </a>
+                <a class="nav navbar-nav" href="{{ url('/yoggy') }}">
+                    <div id="logo" class="stylesLogo logo-img">
+                        <img id="reporte" class="imagenPerfil" src="/imagen/wrench.png" >
+                        <h4 class="subtitle_Herr">Herramientas</h4>
+                    </div>
+                </a>
+                <a class="nav navbar-nav" href="{{ url('/yoggy') }}">
+                    <div id="logo" class="stylesLogo logo-img">
+                        <img id="reporte" class="imagenPerfil" src="/imagen/idea.png" >
+                        <h4 class="subtitle_Usuario">Reportes</h4>
+                    </div>
+                </a>               
+
+                 @if(Auth::user()->roll==0)  
+
+
+                <a class="nav navbar-nav" href="{{ url('/yoggy') }}">
+                    <div id="logo" class="stylesLogo logo-img">
+                        <img id="productos" class="imagenPerfil" src="/imagen/ice-cream1.png" >
+                        <h4 class="subtitle_Producto">Productos</h4>
+                    </div>
+                </a>
+                
+                @endif
+                <a class="nav navbar-nav" href="{{ url('/yoggy') }}">
+                    <div id="logo" class="stylesLogo logo-img">
+                        <img id="clientes" class="imagenPerfil" src="/imagen/team.png" >
+                        <h4 class="subtitle_Usuario">Clientes</h4>
+                    </div>
+                </a>
+                <a class="ulStyle nav navbar-nav" href="{{ url('/yoggy') }}">
+                    <div id="logo" class="stylesLogo logo-img">
+                        <img id="tpv" class="imagenPerfil" src="/imagen/cash.png">
+                        <h4 class="subtitle_Tpv">TPV</h4>
+                    </div>
+                </a>
+                
                 @if(Auth::user()->roll==0)  
                 <a class="nav navbar-nav" href="{{ route('admin') }}">
                     <div id="logo" class="stylesLogo logo-img">
@@ -58,12 +96,7 @@
                     </div>
                 </a>
                 @endif
-                <a class="nav navbar-nav" href="">
-                    <div id="logo" class="stylesLogo logo-img">
-                        <img id="reporte" class="imagenPerfil" src="/imagen/idea.png" >
-                        <h4 class="subtitle_Usuario">Reportes</h4>
-                    </div>
-                </a>                   
+               
 
 
                 <!-- Right Side Of Navbar -->

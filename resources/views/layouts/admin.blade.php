@@ -29,18 +29,22 @@
                 <!-- Left Side Of Navbar -->
 
                 <a class=" navbar-nav" href="{{ route('provider_index') }}">
+
                     <div id="logo" class="stylesLogo logo-img">
                         <img id="" class="imagenPerfil" src="/imagen/coins.png" >
                         <h4 class="subtitle_Prove">Proveedores</h4>
                     </div>
-                </a>
-                <a class="nav navbar-nav" href="">
+                </a>              
+
+                <a class="nav navbar-nav" href="{{ url('/yoggy') }}">
+
                     <div id="logo" class="stylesLogo logo-img">
                         <img id="productos" class="imagenPerfil" src="/imagen/ice-cream1.png" >
                         <h4 class="subtitle_Producto">Productos</h4>
                     </div>
                 </a>
-                <a class="nav navbar-nav" href="{{ route('user_index') }}">
+
+                <a class="nav navbar-nav" href="{{ route('user_index') }}">              
                     <div id="logo" class="stylesLogo logo-img">
                         <img id="usuarios" class="imagenPerfil" src="/imagen/team_Yoggy.png">
                         <h4 class="subtitle_Usuario">Usuarios</h4>
@@ -76,8 +80,6 @@
                         <h4 class="subtitle_Usuario">Reportes</h4>
                     </div>
                 </a>
-
-             
 
                 <!-- Right Side Of Navbar -->
                 <ul class="nav navbar-nav navbar-right">
