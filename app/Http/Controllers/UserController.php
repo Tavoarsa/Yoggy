@@ -10,7 +10,7 @@ use App\User;
 
 class UserController extends Controller
 {
-    function index(){
+    public function index(){
 
     	$users= User::orderBy('first_name')->paginate(5);
     	
@@ -18,4 +18,18 @@ class UserController extends Controller
     	return view('admin.user.index',compact('users'));
 
     }
+
+    public function show(User $user){
+
+    	return $user;
+    }
+
+    public function edit($id){
+
+    	$users= User::where('id',$id)->get();
+
+    	return view('admin.user.edit',compact('users'));
+}
+
+
 }

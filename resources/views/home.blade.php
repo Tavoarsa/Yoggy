@@ -53,7 +53,7 @@
                                     <i class="fa fa-btn fa-sign-in"></i> Login
                                 </button>
 
-                                <a class="btn btn-link" href="{{ url('/password/reset') }}">OLvido su Contraseña</a>
+                                <a class="btn btn-link" href="{{ url('/password/reset') }}">Olvido su Contraseña</a>
                             </div>
                         </div>
                     </form>
@@ -62,5 +62,4 @@
         </div>
     </div>
 </div>
-@endsection
-
+@stop

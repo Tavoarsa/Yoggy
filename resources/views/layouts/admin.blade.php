@@ -26,6 +26,7 @@
             </div>
             <div class="collapse navbar-collapse" id="Navbar">
                 <!-- Left Side Of Navbar -->
+<<<<<<< HEAD
                 <a class=" navbar-nav" href="{{ url('/yoggy') }}">
                     <div id="logo" class="stylesLogo logo-img">
                         <img id="" class="imagenPerfil" src="/imagen/coins.png" >
@@ -74,6 +75,29 @@
                         <h4 class="subtitle_Usuario">Reportes</h4>
                     </div>
                 </a>
+=======
+                <ul class="narvar  nav navbar-nav">
+                    <li><a href="">Proveedores</a></li>
+                </ul>
+                <ul class="nav navbar-nav">
+                    <li><a href="">Productos</a></li>
+                </ul>
+                <ul class="nav navbar-nav">
+                    <li><a href="{{ route('user_index') }}">Usuarios</a></li>
+                </ul>
+                <ul class="nav navbar-nav">
+                    <li><a href="">Clientes</a></li>
+                </ul>
+                <ul class="nav navbar-nav">
+                    <li><a href="">Tpv</a></li>
+                </ul>
+                <ul class="nav navbar-nav">
+                    <li><a href="">Facturas</a></li>
+                </ul>
+                <ul class="nav navbar-nav">
+                   <li><a href="">Reporte</a></li>
+                </ul>
+>>>>>>> a14a8dd4a6bf5df217d37d7d0a243caf275d5fc5
                 <!-- Right Side Of Navbar -->
                 <ul class="nav navbar-nav navbar-right">
                     <!-- Authentication Links -->

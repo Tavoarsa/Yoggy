@@ -16,9 +16,24 @@ Route::group(['middleware' => ['web']], function () {
 Route::get('/', function () {
     return view('/home');
 });
-Route::get('/yoggy', function () {
+
+
+
+
+
+Route::group(['middleware' => 'auth'], function (){
+
+
+	Route::get('/yoggy', function () {
     return view('/yoggy');
 });
+
+
+Route::group(['middleware' => 'admin'], function () {
+
+/*------------------User----------------*/
+/*Rutas para controlar el modulo de Usuario
+	Registrar, Editar*/
 
 Route::get('admin',[
 
@@ -26,32 +41,36 @@ Route::get('admin',[
 	  'uses'=>'AdminController@index'
 	]);
 
+Route::get('admin/user',[
 
-
-Route::group(['middleware' => 'auth'], function () 
-{
-	Route::group(['middleware' => 'admin'], function () 
-{
-	
-	Route::get('user',[
-
-	  'as'=>'admin.user.index',
+	  'as'=>'user_index',
 	  'uses'=>'UserController@index'
-	]);
-	});
+]);
+
+Route::get('user/edit/{id}',[
+
+	  'as'=>'user_edit',
+	  'uses'=>'UserController@edit'
+]);
+
+/*---------------------End User------------*/
 
 });
 
+/*---------------------End  middleware admin------------*/
+
 });
-
-
-
-
-
-
-
-
 
 Route::auth();
 
-Route::get('/home', 'HomeController@index');
+});
+
+
+
+
+
+
+
+
+
+
