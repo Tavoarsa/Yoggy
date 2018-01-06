@@ -40,7 +40,7 @@
             <div class=" narvar collapse navbar-collapse" id="Navbar">
                 <!-- Left Side Of Navbar -->
                 <ul class="narvar  nav navbar-nav">
-                    <li><a href="">Proveedores</a></li>
+                    <li><a href="{{ route('provider_index') }}">Proveedores</a></li>
                 </ul>
                 <ul class="nav navbar-nav">
                     <li><a href="">Productos</a></li>
