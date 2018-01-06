@@ -31,7 +31,7 @@ class Admin
         if($this->auth->user()->roll !=0)
         { 
             $message = 'No tienes priveligios de administrador!';           
-            return redirect()->to('/home')->with('message', $message);;
+            return redirect()->to('/')->with('message', $message);;
         }  
         
         return $next($request);

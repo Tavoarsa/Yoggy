@@ -31,6 +31,7 @@
             </div>
             <div class="collapse navbar-collapse" id="Navbar">
                 <!-- Left Side Of Navbar -->
+
                 <a class="nav navbar-nav" href="{{ url('/yoggy') }}">
                     <div id="logo" class="stylesLogo logo-img">
                         <img id="productos" class="imagenPerfil" src="/imagen/ice-cream1.png" >
@@ -61,6 +62,30 @@
                         <h4 class="subtitle_Usuario">Reportes</h4>
                     </div>
                 </a>
+
+                <ul class="nav navbar-nav">
+                    <li><a href="">TPV</a></li>
+                </ul>
+                <ul class="nav navbar-nav">
+                    <li><a href="">Productos</a></li>
+                </ul>
+                <ul class="nav navbar-nav">
+                    <li><a href="">Cierre_de_Caja</a></li>
+                </ul>
+                <ul class="nav navbar-nav">
+                    <li><a href="">Clientes</a></li>
+                </ul>   
+
+                 @if(Auth::user()->roll==0)  
+
+                <ul class="nav navbar-nav">
+                    <li><a href="{{ route('admin') }}">Herramienta</a></li>
+                </ul>
+                
+                @endif
+              
+
+
                 <!-- Right Side Of Navbar -->
                 <ul class="nav navbar-nav navbar-right">
                     <!-- Authentication Links -->
