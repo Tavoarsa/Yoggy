@@ -2,14 +2,13 @@
 body {
   /* background: url('imagen/PORTADA_YOGGY.jpg');
     */
-background: black;
-red
+    color: red;
 }
 
  .narvar{
     color: red;
  }
- #NavStyle{
+ .NavStyle{
     background-color: red;
  }
  #target {

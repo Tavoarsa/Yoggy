@@ -9,6 +9,14 @@ use App\User;
 
 class UserController extends Controller
 {
+
+    public function index(){
+
+    	$users= User::orderBy('first_name')->paginate(5);
+    	
+
+    	return view('admin.user.index',compact('users'));
+
     /**
      * Display a listing of the resource.
      *
@@ -19,6 +27,7 @@ class UserController extends Controller
         $users= User::orderBy('first_name')->paginate(5);
         return view('admin.user.index',compact('users'));
     }
+
 
     /**
      * Show the form for creating a new resource.
