@@ -25,6 +25,8 @@ Route::group(['middleware' => 'auth'], function (){
 
 
 	Route::get('/yoggy', function () {
+
+
     return view('/yoggy');
 });
 
@@ -41,17 +43,15 @@ Route::get('admin',[
 	  'uses'=>'AdminController@index'
 	]);
 
-Route::get('admin/user',[
+Route::resource('user','UserController');
+
+Route::get('user',[
 
 	  'as'=>'user_index',
 	  'uses'=>'UserController@index'
 ]);
 
-Route::get('user/edit/{id}',[
 
-	  'as'=>'user_edit',
-	  'uses'=>'UserController@edit'
-]);
 
 /*---------------------End User------------*/
 
