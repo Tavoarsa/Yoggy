@@ -50,40 +50,20 @@
                         <h4 class="subtitle_Tpv">TPV</h4>
                     </div>
                 </a>
-                <a class="nav navbar-nav" href="{{ url('/yoggy') }}">
+                @if(Auth::user()->roll==0)  
+                <a class="nav navbar-nav" href="{{ route('admin') }}">
                     <div id="logo" class="stylesLogo logo-img">
                         <img id="reporte" class="imagenPerfil" src="/imagen/wrench.png" >
                         <h4 class="subtitle_Herr">Herramientas</h4>
                     </div>
                 </a>
-                <a class="nav navbar-nav" href="{{ url('/yoggy') }}">
+                @endif
+                <a class="nav navbar-nav" href="">
                     <div id="logo" class="stylesLogo logo-img">
                         <img id="reporte" class="imagenPerfil" src="/imagen/idea.png" >
                         <h4 class="subtitle_Usuario">Reportes</h4>
                     </div>
-                </a>
-
-                <ul class="nav navbar-nav">
-                    <li><a href="">TPV</a></li>
-                </ul>
-                <ul class="nav navbar-nav">
-                    <li><a href="">Productos</a></li>
-                </ul>
-                <ul class="nav navbar-nav">
-                    <li><a href="">Cierre_de_Caja</a></li>
-                </ul>
-                <ul class="nav navbar-nav">
-                    <li><a href="">Clientes</a></li>
-                </ul>   
-
-                 @if(Auth::user()->roll==0)  
-
-                <ul class="nav navbar-nav">
-                    <li><a href="{{ route('admin') }}">Herramienta</a></li>
-                </ul>
-                
-                @endif
-              
+                </a>                   
 
 
                 <!-- Right Side Of Navbar -->
