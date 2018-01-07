@@ -1,6 +1,8 @@
 @extends('layouts.admin')
 
 @section('content')
+<br>
+<br>
 <div class="container">
 
             <div class="panel panel-default">
