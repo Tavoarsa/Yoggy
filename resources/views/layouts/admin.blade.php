@@ -64,12 +64,7 @@
                         <h4 class="subtitle_Usuario">Facturas</h4>
                     </div>
                 </a>
-                <a class="nav navbar-nav" href="{{ url('/yoggy') }}">
-                    <div id="logo" class="stylesLogo logo-img">
-                        <img id="reporte" class="imagenPerfil" src="/imagen/wrench.png" >
-                        <h4 class="subtitle_Herr">Herramientas</h4>
-                    </div>
-                </a>
+              
                 <a class="nav navbar-nav" href="{{ url('/yoggy') }}">
                     <div id="logo" class="stylesLogo logo-img">
                         <img id="reporte" class="imagenPerfil" src="/imagen/idea.png" >

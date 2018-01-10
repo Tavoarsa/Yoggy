@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\Categorie;
+use App\Http\Requests\StoreCategoyRequest;
 
 class CategoryController extends Controller
 {
@@ -16,8 +17,8 @@ class CategoryController extends Controller
      */
     public function index()
     {
-        $categories= Categorie::all();
-        return view('admin.category.index', compact('categories')); 
+        $categorys= Categorie::all();
+        return view('admin.category.index', compact('categorys')); 
     }
 
     /**
@@ -36,9 +37,17 @@ class CategoryController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
-    {
-        //
+    public function store(StoreCategoyRequest $request)
+    {        
+        $this->validate($request, [
+            'category_name'  => 'required|max:100',
+            'descrition' => 'required|max:100'
+            
+        ]);        
+        $category= new \App\Categorie($request->all());
+        $category->save();
+        return redirect()->route('category_index');       
+        
     }
 
     /**
@@ -47,9 +56,9 @@ class CategoryController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Categorie $category)
     {
-        //
+        return $category;
     }
 
     /**
@@ -58,9 +67,9 @@ class CategoryController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Categorie $category)
     {
-        //
+        return view('admin.category.edit',compact('category'));       
     }
 
     /**
@@ -70,9 +79,12 @@ class CategoryController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(StoreCategoyRequest $request, Categorie $category)
     {
-        //
+        $category->fill($request->all());
+        $category->save();
+        $message ='Categoria actualizada correctamente!';        
+        return redirect()->route('category_index')->with('message', $message);
     }
 
     /**
@@ -81,8 +93,12 @@ class CategoryController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Categorie $category)
     {
-        //
+        $deleted = $category->delete();
+        
+        $message = $deleted ? 'Categoria eliminado correctamente!' : 'El Categoria NO pudo eliminarse!';
+        
+        return redirect()->route('category_index')->with('message', $message);
     }
 }

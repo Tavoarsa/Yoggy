@@ -11,7 +11,7 @@
 |
 */
 /*------------------ Midlewere Web----------------*/
-Route::group(['middleware' => ['web']], function () {
+
 
 
 Route::get('/', function () {
@@ -63,14 +63,26 @@ Route::get('category',[
 /*---------------------End Category------------*/
 });
 
+/*------------------Category----------------*/
+Route::resource('product','ProductController');
+
+Route::get('product',[
+
+	  'as'=>'product_index',
+	  'uses'=>'ProductController@index'
+]);
+/*---------------------End Category------------*/
+
 /*---------------------End  middleware admin------------*/
 
 });
 
-Route::auth();
 
-});
+
+
 /*---------------------End  middleware web------------*/
+
+Route::auth();
 
 
 

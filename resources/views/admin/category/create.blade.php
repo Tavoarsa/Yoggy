@@ -1,20 +1,14 @@
-@extends('layouts.admin')
+@extends('layouts.test')
 
 @section('content')
- <div class="container text-center">
-        
-        <div class="page-header">
-            <h1>
-               <i class="fa fa-product-hunt" aria-hidden="true"></i>Categoria <small>[ Agregar Categoria ]</small>
-            </h1>
-        </div>
+
+
+<div class="container text-center">      
         
         <div class="row">
-            <div class="col-md-offset-3 col-md-6">
-                
-                <div class="page">                
-                                    
-                 
+            <div class="col-md-offset-3 col-md-6">     
+                <div class="page">
+                    @include('partials.errors')
                       {!! Form::open(['route'=>'category.store']) !!}
 
                        <div class="form-group">
@@ -33,7 +27,7 @@
                             !!}
 
                         </div>
-
+                        
                         <div class="form-group">
                             <label for="descrition">Descrición:</label>
                             
@@ -66,7 +60,7 @@
                             !!}
                         </div>
 
-                            <div class="form-group">
+                         <div class="form-group">
                             <label for="picture">Imagen:</label>
                             
                             {!! 
@@ -86,12 +80,10 @@
                             {!! Form::submit('Guardar', array('class'=>'btn btn-primary')) !!}
                              <a href="{{ route('category_index') }}" class="btn btn-warning">Cancelar</a>
                         </div>
-                        {!! Form::close() !!}               
-                </div>                
+                        {!! Form::close() !!}
+                </div>             
             </div>
-        </div>       
+        </div>  
+
 </div>
-
-
-
 @endsection

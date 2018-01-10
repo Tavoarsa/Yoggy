@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use App\Http\Requests\Request;
 
-class ProviderRequest extends Request
+class StoreCategoyRequest extends Request
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -24,11 +24,19 @@ class ProviderRequest extends Request
     public function rules()
     {
         return [
+
+            'category_name'  => 'required|max:100',
+            'descrition' => 'required|max:100'
             
-            'supplier_name'      => 'required|max:100',
-            'phone'              => 'required|max:100',
-            'email'              => 'required|email',
-            'contact_name'       => 'required|min:4|max:20',     
+        ];
+    }
+
+    public function messages(){
+
+        return [
+        'category_name' => 'Debes escribir un nombre de categoria',
+        'descrition' => 'Debes escribir una descripción'
+
         ];
     }
 }

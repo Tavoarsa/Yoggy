@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
-use App\Http\Requests\ProviderRequest;
+
 use App\Provider;
 
 class ProviderController extends Controller
@@ -37,7 +37,7 @@ class ProviderController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(ProviderRequest $request, Provider $provider)
+    public function store(Request $request, Provider $provider)
     {    
         $provider->supplier_name = $request->get('supplier_name');
         $provider->contact_name = $request->get('contact_name');
