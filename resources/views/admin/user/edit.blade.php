@@ -7,10 +7,7 @@
 			<h1>
 				<i class="fa fa-pencil" aria-hidden="true"></i>
 				Usuarios <small>[Editar Usuario]</small>
-                  @if (count($errors) > 0)
-                        @include('partials.errors')
-                    @endif                  
-                 
+                
 			</h1>
 		</div>
 
@@ -18,7 +15,7 @@
             <div class="col-md-offset-3 col-md-6">
                 
                 <div class="page"> 
-
+                @include('partials.errors')
                  
                     
                     {!! Form::model($user, array('route' => array('user.update', $user))) !!}

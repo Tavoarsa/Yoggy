@@ -21,6 +21,9 @@
         <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.23/angular.min.js"></script>
      </head>
 <body id="app-layout">
+@if(\Session::has('message'))
+        @include('partials.message')
+ @endif
 
  @yield('content')
 

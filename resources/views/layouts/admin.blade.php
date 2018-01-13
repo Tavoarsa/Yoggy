@@ -13,6 +13,9 @@
      <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.23/angular.min.js"></script>
 </head>
 <body >
+@if(\Session::has('message'))
+        @include('partials.message')
+ @endif
 
     <nav id="navbar_P"  class="NavStyle navbar navbar-default navbar-static-top">
         <div class="container">

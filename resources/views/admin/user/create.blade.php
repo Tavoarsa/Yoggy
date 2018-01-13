@@ -14,9 +14,7 @@
                 
                 <div class="page">
                     
-                    @if (count($errors) > 0)
-                        @include('partials.errors')
-                    @endif
+                  
                     
                     {!! Form::open(['route'=>'user.store']) !!}
         

@@ -3,9 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
 use App\Http\Requests;
-
+use App\Http\Requests\StoreProviderRequest;
 use App\Provider;
 
 class ProviderController extends Controller
@@ -37,23 +36,10 @@ class ProviderController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request, Provider $provider)
-    {    
-        $provider->supplier_name = $request->get('supplier_name');
-        $provider->contact_name = $request->get('contact_name');
-        $provider->supplier_position = $request->get('supplier_position');
-        $provider->address = $request->get('address');
-        $provider->phone = $request->get('phone');
-        $provider->postal_code = $request->get('postal_code');    
-        $provider->city = $request->get('city');
-        $provider->status = $request->get('status');
-        $provider->way_pay = $request->get('way_pay');
-        $provider->notes = $request->get('notes');
-        $provider->email = $request->get('email');        
-        $provider= $provider->save();    
-          
-           
-        
+    public function store(StoreProviderRequest $request, Provider $provider)
+    {
+        $provider= new \App\Provider($request->all());                 
+        $provider= $provider->save();           
         $message = $provider ? 'Proveedor agregado correctamente!' : 'El proveedor NO pudo agregarse!';
         
         return redirect()->route('provider_index')->with('message', $message);
@@ -88,35 +74,11 @@ class ProviderController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Provider $provider)
-    {
-       // dd($provider);
-        $this->validate($request, [
-            'supplier_name'  => 'required|max:100',
-            'phone' => 'required|max:100',
-            'email'     => 'required|email',
-            'contact_name'      => 'required|min:4|max:20',            
-            
-        ]);
-        
-
-        $provider->supplier_name = $request->get('supplier_name');
-        $provider->contact_name = $request->get('contact_name');
-        $provider->supplier_position = $request->get('supplier_position');
-        $provider->address = $request->get('address');
-        $provider->phone = $request->get('phone');
-        $provider->postal_code = $request->get('postal_code');    
-        $provider->city = $request->get('city');
-        $provider->status = $request->get('status');
-        $provider->way_pay = $request->get('way_pay');
-        $provider->notes = $request->get('notes');
-        $provider->email = $request->get('email');        
-       
-
-        $updated = $provider->save();
-        
-        $message = $updated ? 'Proveedor actualizado correctamente!' : 'El Proveedor NO pudo actualizarse!';
-        
+    public function update(StoreProviderRequest $request, Provider $provider)
+    { 
+        $provider->fill($request->all());  
+        $updated = $provider->save();        
+        $message = $updated ? 'Proveedor actualizado correctamente!' : 'El Proveedor NO pudo actualizarse!';        
         return redirect()->route('provider_index')->with('message', $message);    
        
     }

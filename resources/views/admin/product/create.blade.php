@@ -1,7 +1,7 @@
 @extends('layouts.test')
 
 @section('content')
- <div class="container text-center">
+ <div class="container ">
         
         <div class="page-header">
             <h1>
@@ -10,14 +10,14 @@
         </div>
         
         <div class="row">
-            <div class="col-md-offset-3 col-md-6">
+            <div >
                 
                 <div class="page"> 
                  @include('partials.errors')
 
                                               
                  
-                      {!! Form::open(['route'=>'product.store']) !!}
+                      {!! Form::open(['route'=>'product.store','class' => 'form-inline']) !!}
 
                        <div class="form-group">
                             <label for="product_code">Codigo:</label>

@@ -6,22 +6,14 @@
 		<div class="page-header">
 			<h1>
 				<i class="fa fa-pencil" aria-hidden="true"></i>
-				Usuarios <small>[Editar Proveedor]</small>
-
-                  @if (count($errors) > 0)
-                        @include('partials.errors')
-                    @endif                  
-                 
+				Usuarios <small>[Editar Proveedor]</small>                
 			</h1>
 		</div>
 
 		<div class="row">
-            <div class="col-md-offset-3 col-md-6">
-                
-                <div class="page"> 
-
-                 
-                    
+            <div class="col-md-offset-3 col-md-6">                
+                <div class="page">             
+                    @include('partials.errors')
                     {!! Form::model($provider, array('route' => array('provider.update', $provider))) !!}
                     
                         <input type="hidden" name="_method" value="PUT">

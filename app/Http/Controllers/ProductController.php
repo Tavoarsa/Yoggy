@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
-use App\Http\Requests\StorageProductRequest;
+use App\Http\Requests\StoreProductRequest;
 
     
 use Illuminate\Support\Collection as Collection;
@@ -24,12 +24,9 @@ class ProductController extends Controller
     {
         $products = Product::all();
         $category= Categorie::all();
-        $provider= Provider::all();
-
-              
+        $provider= Provider::all();              
         return view('admin.product.index', compact('products','category','provider')); 
     }
-
     /**
      * Show the form for creating a new resource.
      *
@@ -41,54 +38,41 @@ class ProductController extends Controller
         $provider= Provider::all()->lists('supplier_name','id');
         return view('admin.product.create',compact('category','provider'));
     }
-
     /**
      * Store a newly created resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(StorageProductRequest $request)
-    {
-        
-          $this->validate($request, [
-            'product_code'  => 'required|max:100',
-            'providers_id' => 'required|max:100',
-            'categories_id'  => 'required|max:100',
-            'product_name'  => 'required|max:100',
-            'quatity'  => 'required|max:100',
-            'purchase_price'  => 'required|max:100'
-            
-        ]);
+    public function store(StoreProductRequest $request)
+    {               
         $product= new \App\Product($request->all());
         $product->save();
         return redirect()->route('product_index');    
 
-        dd("hola");
     }
-
     /**
      * Display the specified resource.
      *
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Product $product)
     {
-        //
+        return $product;
     }
-
     /**
      * Show the form for editing the specified resource.
      *
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Product $product)
     {
-        //
+        $category= Categorie::all()->lists('category_name','id');
+        $provider= Provider::all()->lists('supplier_name','id');
+        return view('admin.product.edit',compact('product','category','provider'));
     }
-
     /**
      * Update the specified resource in storage.
      *
@@ -96,19 +80,23 @@ class ProductController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(StoreProductRequest $request,Product $product) 
     {
-        //
+        $product->fill($request->all());
+        $product->save();
+        $message ='Producto actualizado correctamente!';        
+        return redirect()->route('product_index')->with('message', $message);
     }
-
     /**
      * Remove the specified resource from storage.
      *
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Product $product)
     {
-        //
+        $deleted = $product->delete();        
+        $message = $deleted ? 'Producto eliminado correctamente!' : 'La Producto NO pudo eliminarse!';        
+        return redirect()->route('product_index')->with('message', $message);
     }
 }

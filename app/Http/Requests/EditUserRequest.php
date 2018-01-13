@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use App\Http\Requests\Request;
 
-class StoreCategoyRequest extends Request
+class EditUserRequest extends Request
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -25,11 +25,11 @@ class StoreCategoyRequest extends Request
     {
         return [
 
-            'category_name'  => 'required|max:100',
-            'descrition' => 'required|max:100'
-            
+             'first_name'  => 'required|max:100',
+            'last_name' => 'required|max:100',
+            'email'     => 'required|email',
+            'username'      => 'required|min:4|max:20'
+           // 'password'  => ($request->get('password') != "") ? 'required|confirmed' : "",
         ];
     }
-
-  
 }

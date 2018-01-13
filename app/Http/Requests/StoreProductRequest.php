@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use App\Http\Requests\Request;
 
-class StorageProductRequest extends Request
+class StoreProductRequest extends Request
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -35,12 +35,4 @@ class StorageProductRequest extends Request
         ];
     }
 
-    public function messages(){
-
-        return [
-        'product_code' => 'Debes escribir un codigo ',
-        'product_name' => 'Debes escribir una Nombre'
-
-        ];
-    }
 }

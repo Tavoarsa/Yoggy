@@ -12,10 +12,8 @@
         <div class="row">
             <div class="col-md-offset-3 col-md-6">
                 
-                <div class="page"> 
-
-                                              
-                 
+                <div class="page">                                       
+                  @include('partials.errors')
                       {!! Form::open(['route'=>'provider.store']) !!}
 
                        <div class="form-group">
