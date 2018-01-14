@@ -23,7 +23,7 @@
                 <!-- Branding Image -->
                 <a class="navbar-brand" href="{{ url('/yoggy') }}">
                     <div id="logo" class="stylesLogo logo-img">
-                        <img id="proveedores" class="imagenPerfil" src="/imagen/perfil.jpg" >
+                        <img id="Yoggy" class="imagenPerfil" src="/imagen/perfil.jpg" >
                         <h4 class="subtitle_Yoggy">Yoggy Frozen</h4>
                     </div>
                 </a>
@@ -32,18 +32,22 @@
                 <!-- Left Side Of Navbar -->
 
                 <a class=" navbar-nav" href="{{ route('provider_index') }}">
+
                     <div id="logo" class="stylesLogo logo-img">
                         <img id="" class="imagenPerfil" src="/imagen/coins.png" >
                         <h4 class="subtitle_Prove">Proveedores</h4>
                     </div>
-                </a>
-                <a class="nav navbar-nav" href="">
+                </a>              
+
+                <a class="nav navbar-nav" href="{{ url('/yoggy') }}">
+
                     <div id="logo" class="stylesLogo logo-img">
                         <img id="productos" class="imagenPerfil" src="/imagen/ice-cream1.png" >
                         <h4 class="subtitle_Producto">Productos</h4>
                     </div>
                 </a>
-                <a class="nav navbar-nav" href="{{ route('user_index') }}">
+
+                <a class="nav navbar-nav" href="{{ route('user_index') }}">              
                     <div id="logo" class="stylesLogo logo-img">
                         <img id="usuarios" class="imagenPerfil" src="/imagen/team_Yoggy.png">
                         <h4 class="subtitle_Usuario">Usuarios</h4>
@@ -75,29 +79,21 @@
                     </div>
                 </a>
 
-             
-
                 <!-- Right Side Of Navbar -->
                 <ul class="nav navbar-nav navbar-right">
                     <!-- Authentication Links -->
                     @if (Auth::guest())
                         <a href="{{ url('/login') }}">
                             <div id="logo" class="stylesLogo logo-img">
-                                <img id="reporte" class="imagenPerfil" src="/imagen/login.png" >
+                                <img id="reporte" class="imagenPerfil" src="/imagen/login.png">
                                 <h4 class="subtitle_Login">Login</h4>
                             </div>
-
                         </a>
                     @else
-                        <li class="dropdown">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
-                                {{ Auth::user()->name }} <span class="caret"></span>
-                            </a>
-
-                            <ul class="dropdown-menu" role="menu">
-                                <li><a href="{{ url('/logout') }}"><i class="fa fa-btn fa-sign-out"></i>Logout</a></li>
-                            </ul>
-                        </li>
+                    <div id="Admin" class="stylesLogo">
+                                <img id="reporte" class="imagenPerfil logo-img" src="/imagen/user.png">
+                                <h4 class="subtitle_Login"></h4>
+                            </div>
                     @endif
                 </ul>
             </div>

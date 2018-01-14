@@ -1,8 +1,7 @@
-<?php
 
+<?php
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
-
 class CreateProductsTable extends Migration
 {
     /**
@@ -26,12 +25,10 @@ class CreateProductsTable extends Migration
             $table->string('discout');
             $table->string('reorder_level');
             $table->string('picture');
-
            $table->timestamps();
              });
     }
     
-
     /**
      * Reverse the migrations.
      *

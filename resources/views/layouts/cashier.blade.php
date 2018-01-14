@@ -26,8 +26,8 @@
             <div class="navbar-header">
                 <!-- Branding Image -->
                 <a class="navbar-brand" href="{{ url('/yoggy') }}">
-                    <div id="logo" class="stylesLogo logo-img">
-                        <img id="proveedores" class="imagenPerfil" src="/imagen/perfil.jpg" >
+                    <div id="logo_Yoggy" class="stylesLogo logo-img">
+                        <img id="Yoggy" class="imagenPerfil" src="/imagen/perfil.jpg" >
                         <h4 class="subtitle_Yoggy">Yoggy Frozen</h4>
                     </div>
                 </a>
@@ -35,12 +35,37 @@
             <div class="collapse navbar-collapse" id="Navbar">
                 <!-- Left Side Of Navbar -->
 
+
                 <a class="nav navbar-nav" href="{{ url('/yoggy') }}">
                     <div id="logo" class="stylesLogo logo-img">
                         <img id="productos" class="imagenPerfil" src="/imagen/ice-cream1.png" >
                         <h4 class="subtitle_Producto">Productos</h4>
                     </div>
                 </a>
+                <a class="ulStyle nav navbar-nav" href="{{ url('/yoggy') }}">
+                    <div id="logo" class="stylesLogo logo-img">
+                        <img id="tpv" class="imagenPerfil" src="/imagen/cash.png">
+                        <h4 class="subtitle_Tpv">TPV</h4>
+                    </div>
+                </a>
+                <a class="nav navbar-nav" href="{{ url('/yoggy') }}">
+                    <div id="logo" class="stylesLogo logo-img">
+                        <img id="reporte" class="imagenPerfil" src="/imagen/idea.png" >
+                        <h4 class="subtitle_Usuario">Reportes</h4>
+                    </div>
+                </a>               
+
+                 @if(Auth::user()->roll==0)  
+
+
+                <a class="nav navbar-nav" href="{{ url('/yoggy') }}">
+                    <div id="logo" class="stylesLogo logo-img">
+                        <img id="productos" class="imagenPerfil" src="/imagen/ice-cream1.png" >
+                        <h4 class="subtitle_Producto">Productos</h4>
+                    </div>
+                </a>
+                
+                @endif
                 <a class="nav navbar-nav" href="{{ url('/yoggy') }}">
                     <div id="logo" class="stylesLogo logo-img">
                         <img id="clientes" class="imagenPerfil" src="/imagen/team.png" >
@@ -53,6 +78,7 @@
                         <h4 class="subtitle_Tpv">TPV</h4>
                     </div>
                 </a>
+                
                 @if(Auth::user()->roll==0)  
                 <a class="nav navbar-nav" href="{{ route('admin') }}">
                     <div id="logo" class="stylesLogo logo-img">
@@ -61,12 +87,7 @@
                     </div>
                 </a>
                 @endif
-                <a class="nav navbar-nav" href="">
-                    <div id="logo" class="stylesLogo logo-img">
-                        <img id="reporte" class="imagenPerfil" src="/imagen/idea.png" >
-                        <h4 class="subtitle_Usuario">Reportes</h4>
-                    </div>
-                </a>                   
+               
 
 
                 <!-- Right Side Of Navbar -->
@@ -75,21 +96,16 @@
                     @if (Auth::guest())
                         <a href="{{ url('/login') }}">
                             <div id="logo" class="stylesLogoCashier logo-img">
-                                <img id="reporte" class="imagenPerfil" src="/imagen/login.png" >
+                                <img id="login" class="imagenPerfil" src="/imagen/login.png" >
                                 <h4 class="subtitle_Login_Cashier">Login</h4>
                             </div>
 
                         </a>
                     @else
-                        <li class="dropdown">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
-                                {{ Auth::user()->name }} <span class="caret"></span>
-                            </a>
-
-                            <ul class="dropdown-menu" role="menu">
-                                <li><a href="{{ url('/logout') }}"><i class="fa fa-btn fa-sign-out"></i>Logout</a></li>
-                            </ul>
-                        </li>
+                    <div id="logo" class="stylesLogo logo-img">
+                        <img id="cashier" class="imagenPerfil" src="/imagen/Aprobado.png" >
+                        <h4 class="subtitle_Login_Cashier">Cajero</h4>
+                    </div>
                     @endif
                 </ul>
             </div>

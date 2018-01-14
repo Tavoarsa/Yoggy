@@ -3,7 +3,6 @@
 @section('content')
 <br>
 <br>
-
 <div class="container text-center">
 
         <div class="page-header">
