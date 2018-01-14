@@ -11,6 +11,7 @@
 
 <link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300|Roboto+Slab' rel='stylesheet' type='text/css'>
 <link type="text/css" rel="stylesheet" href="../css/round-about.css">
+ <link type="text/css" rel="stylesheet" href="../css/style_form.css">
 
 <style>
 body {

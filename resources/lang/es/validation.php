@@ -169,7 +169,7 @@ return [
         'reorder_level'         => 'nivel de reeorden',
         'category_name'         => 'nombre de la categoría',
         'descrition'            => 'descripción',
-        'tag'                   => 'tag';
+        'tag'                   => 'tag'
     ],
 
 ];
