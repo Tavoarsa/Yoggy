@@ -20,7 +20,7 @@
                 <!-- Branding Image -->
                 <a class="navbar-brand" href="{{ url('/yoggy') }}">
                     <div id="logo" class="stylesLogo logo-img">
-                        <img id="proveedores" class="imagenPerfil" src="/imagen/perfil.jpg" >
+                        <img id="Yoggy" class="imagenPerfil" src="/imagen/perfil.jpg" >
                         <h4 class="subtitle_Yoggy">Yoggy Frozen</h4>
                     </div>
                 </a>
@@ -87,21 +87,15 @@
                     @if (Auth::guest())
                         <a href="{{ url('/login') }}">
                             <div id="logo" class="stylesLogo logo-img">
-                                <img id="reporte" class="imagenPerfil" src="/imagen/login.png" >
+                                <img id="reporte" class="imagenPerfil" src="/imagen/login.png">
                                 <h4 class="subtitle_Login">Login</h4>
                             </div>
-
                         </a>
                     @else
-                        <li class="dropdown">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
-                                {{ Auth::user()->name }} <span class="caret"></span>
-                            </a>
-
-                            <ul class="dropdown-menu" role="menu">
-                                <li><a href="{{ url('/logout') }}"><i class="fa fa-btn fa-sign-out"></i>Logout</a></li>
-                            </ul>
-                        </li>
+                    <div id="Admin" class="stylesLogo">
+                                <img id="reporte" class="imagenPerfil logo-img" src="/imagen/user.png">
+                                <h4 class="subtitle_Login"></h4>
+                            </div>
                     @endif
                 </ul>
             </div>

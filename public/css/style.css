@@ -5,9 +5,9 @@ body {
     -webkit-background-size: cover;
     background-attachment: fixed;
     background-position: center center;
-
-
+    color: white;
 }
+
 .navbar_P{
     background-color: #902929;
     color: blue;
@@ -31,7 +31,7 @@ body {
  #stylesLogo{
  height: 100px
  width:100px;
- margin-top: 10px; 
+ margin-top: -82px; 
  }
  #target {
         width: 345px;
@@ -40,6 +40,9 @@ body {
       #map {
         height: 90%;
       }
+}
+.conte{
+    background: black;
 }
 
 .controls {
@@ -67,13 +70,7 @@ li {
 a {
     padding: 15px;
 }
-.sty{
-    margin-top:20px; 
-   background:#383737; 
-}
-.StyleLogin{
-background:#5c7a75;
-}
+
 .contenido.logo {
 
     background: rgb(56, 55, 55);
@@ -94,10 +91,11 @@ color: white;
 
 }
 
-#logo-img {
-    width: 250px;
-   -webkit-box-shadow:0 0 22px rgba(0,0,0,.5);
+#logo_Yoggy{
+  
 
+  /* -webkit-box-shadow:0 0 22px rgba(0,0,0,.5);
+*/
 }
 div #logo  img:hover{
 -webkit-transform: scale(1.1);
@@ -108,8 +106,14 @@ div #logo  img:hover{
     border-radius: 10px;
     width: 100px;
     height: 100px;
-    margin-left: 6px;
+    margin-left: 3px;
     margin-top: -33px;
+}
+#Admin{
+    margin-top: 16px;
+}
+ #cashier{
+    margin-top: -18px;
 }
 .stylesLogoCashier img{
      display: flex; 
@@ -154,6 +158,62 @@ div #logo  img:hover{
   color: #dc0b75;
   margin-top: 5px;
 }
+#Yoggy{
+margin-top: -72px;
+/*----------------- Provider------------------*/
+}
+.style_provider{
+margin-left: 10px;
+width: 1222px;
+display: flex;
+flex-wrap: wrap;
+}
+.page_provider{
+
+    width: 207%
+}
+.Nom_Provider{
+    margin-right: 630px;
+}
+.Nom_Contacto{
+    margin-left: 630px;
+    margin-top: -74px;
+}
+.Container_Provider{
+    margin-left: 0;
+}
+.Puesto_Contacto{
+margin-right: 630px;
+}
+.Email_Provider{
+    margin-left: 630px;
+    margin-top: -74px;
+}
+.Telefono_Provider{
+    margin-right: 630px;
+}
+.Direccion_provider{
+    margin-left: 630px;
+    margin-top: -74px;
+}
+.Codigo_postal{
+   margin-right: 630px; 
+}
+.Ciudad_Provider{
+    margin-left: 630px;
+    margin-top: -74px;
+}
+.status_Provider{
+    margin-left: -188px;
+}
+.Formas_pago{
+margin-left: 255px;
+margin-top: -46px;
+}
+#SubHeader{
+    margin-top: -760;
+}
+/*----------------- Provider end ------------------*/
 .subtitle_Login{
   margin-top: 5px;
   margin-left: 37px;
@@ -166,14 +226,40 @@ margin-left: 30px;
 .container {
     display: flex;
     flex-wrap: wrap;
-    width: 1275px;
+    align-items: center;
+    width: 1300px;
 }
-.login_position{
-    color: red;
+.row_Login{
+margin-top: 145px;
+margin-left: 505px;
+height: 230px;
+width: 300px;
+border-radius: 15px;
+}
+.col-md-offset-2{
+background: #8bc557;x;
+display: flex;
+flex-wrap: wrap;
+padding: 60px;
+border-radius: 10px;
 }
 
+.panel-heading{
+text-align: center;
+padding: 14px;
+background: #a63066;
+border-radius: 10px;
+   
+}
+.position_login{
+    margin-left: 50%;
+    margin-top: 50%;
+    background: black;
+}
+
+
 section.row {
-    background: rgb(79, 78, 78);
+    
 }
 li a:hover {
     /* background: rgba(0, 0, 0, 0.41); */
@@ -492,8 +578,8 @@ table {
     width: 100%;
 }
 thead {
-    background: #483519;;
-    color: #fdfdfd;
+    background: #71aa48;
+    color: black;
     text-transform: capitalize;
     letter-spacing: 0.2em;
     border: 1px solid rgba(255, 152, 0, 0.9);;
@@ -507,7 +593,7 @@ td {
     border: 1px solid #282828;
     border-left: 0px;
     border-right: 0px;
-    color: #ffffff;
+    color: black;
     font-size: 13px;
     letter-spacing: 2px;
     letter-spacing: 1px;

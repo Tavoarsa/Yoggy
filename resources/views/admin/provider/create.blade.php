@@ -2,23 +2,20 @@
 
 @section('content')
  <div class="container text-center">
-        
-        <div class="page-header">
+     
+        <div id="SubHeader" class="">
             <h1>
                <i class="fa fa-product-hunt" aria-hidden="true"></i> Proveedores <small>[ Agregar Proveedor ]</small>
             </h1>
         </div>
-        
-        <div class="row">
-            <div class="col-md-offset-3 col-md-6">
+
+        <div class="row style_provider">
+            <div class="col-md-offset-3 col-md-6 Container_Provider">
                 
-                <div class="page"> 
+                <div class="page_provider"> 
+                    {!! Form::open(['route'=>'provider.store']) !!}
 
-                                              
-                 
-                      {!! Form::open(['route'=>'provider.store']) !!}
-
-                       <div class="form-group">
+                       <div class="form-group Nom_Provider">
                             <label for="supplier_name">Nombre de la empresa:</label>
                             
                             {!! 
@@ -36,7 +33,7 @@
                             
                         </div>
 
-                        <div class="form-group">
+                        <div class="form-group Nom_Contacto">
                             <label for="contact_name">Nombre del Contacto:</label>
                             
                             {!! 
@@ -52,7 +49,7 @@
                             !!}
                         </div>
 
-                        <div class="form-group">
+                        <div class="form-group Puesto_Contacto">
                             <label for="supplier_position">Puesto del contacto:</label>
                             
                             {!! 
@@ -68,7 +65,7 @@
                             !!}
                         </div>
 
-                            <div class="form-group">
+                            <div class="form-group Email_Provider">
                             <label for="email">Email:</label>
                             
                             {!! 
@@ -84,7 +81,7 @@
                             !!}
                         </div>
 
-                           <div class="form-group">
+                           <div class="form-group Telefono_Provider">
                             <label for="phone">Telefono:</label>
                             
                             {!! 
@@ -100,7 +97,7 @@
                             !!}
                         </div>
 
-                        <div class="form-group">
+                        <div class="form-group Direccion_provider">
                             <label for="address">Dirección:</label>
                             
                             {!! 
@@ -116,7 +113,7 @@
                             !!}
                         </div>
 
-                        <div class="form-group">
+                        <div class="form-group Codigo_postal">
                             <label for="postal_code">Codigo Postal:</label>
                             
                             {!! 
@@ -134,7 +131,7 @@
 
                     
 
-                        <div class="form-group">
+                        <div class="form-group Ciudad_Provider">
                             <label for="city">Cuidad:</label>
                             
                             {!! 
@@ -152,14 +149,14 @@
 
                      
 
-                        <div class="form-group">
+                        <div class="form-group status_Provider">
                             <label for="status">Status:</label>
                             
                             {{ Form::select('status', ['Activo', 'Inactivo']) }} 
 
                         </div>
 
-                        <div class="form-group">
+                        <div class="form-group Formas_pago">
                             <label for="way_pay">Forma de pago:</label>
                             
                              

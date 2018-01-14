@@ -8,12 +8,11 @@
                 <i class="fa fa-user"></i> USUARIOS <small>[ Agregar usuario ]</small>
             </h1>
         </div>
-        
+        <div id="conte">
         <div class="row">
             <div class="col-md-offset-3 col-md-6">
-                
                 <div class="page">
-                    
+                
                     @if (count($errors) > 0)
                         @include('admin.partials.errors')
                     @endif
@@ -196,6 +195,6 @@
         
     </div>
 
-
+</div>
 
 @stop
