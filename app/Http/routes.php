@@ -63,7 +63,7 @@ Route::get('category',[
 /*---------------------End Category------------*/
 });
 
-/*------------------Category----------------*/
+/*------------------Product----------------*/
 Route::resource('product','ProductController');
 
 Route::get('product',[
@@ -71,11 +71,25 @@ Route::get('product',[
 	  'as'=>'product_index',
 	  'uses'=>'ProductController@index'
 ]);
-/*---------------------End Category------------*/
+/*---------------------End Product------------*/
+
+
 
 /*---------------------End  middleware admin------------*/
 
+/*------------------tvp----------------*/
+Route::resource('tvp','TPVController');
+
+Route::get('tpv',[
+
+	  'as'=>'tpv_index',
+	  'uses'=>'TPVController@index'
+]);
+/*---------------------End tvp------------*/
+
 });
+
+
 
 
 
