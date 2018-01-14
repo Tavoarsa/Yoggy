@@ -13,6 +13,9 @@
      <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.23/angular.min.js"></script>
 </head>
 <body >
+@if(\Session::has('message'))
+        @include('partials.message')
+ @endif
 
     <nav id="navbar_P"  class="NavStyle navbar navbar-default navbar-static-top">
         <div class="container">
@@ -68,12 +71,7 @@
                         <h4 class="subtitle_Usuario">Facturas</h4>
                     </div>
                 </a>
-                <a class="nav navbar-nav" href="{{ url('/yoggy') }}">
-                    <div id="logo" class="stylesLogo logo-img">
-                        <img id="reporte" class="imagenPerfil" src="/imagen/wrench.png" >
-                        <h4 class="subtitle_Herr">Herramientas</h4>
-                    </div>
-                </a>
+              
                 <a class="nav navbar-nav" href="{{ url('/yoggy') }}">
                     <div id="logo" class="stylesLogo logo-img">
                         <img id="reporte" class="imagenPerfil" src="/imagen/idea.png" >

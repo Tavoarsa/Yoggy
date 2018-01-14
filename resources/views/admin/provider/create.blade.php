@@ -8,13 +8,19 @@
                <i class="fa fa-product-hunt" aria-hidden="true"></i> Proveedores <small>[ Agregar Proveedor ]</small>
             </h1>
         </div>
-
+        
+        <div class="row">
+            <div class="col-md-offset-3 col-md-6">
+                
+                <div class="page">                                       
+                  @include('partials.errors')
+                      {!! Form::open(['route'=>'provider.store']) !!}
+                      
         <div class="row style_provider">
             <div class="col-md-offset-3 col-md-6 Container_Provider">
                 
                 <div class="page_provider"> 
                     {!! Form::open(['route'=>'provider.store']) !!}
-
                        <div class="form-group Nom_Provider">
                             <label for="supplier_name">Nombre de la empresa:</label>
                             

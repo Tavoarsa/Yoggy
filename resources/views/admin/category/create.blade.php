@@ -1,21 +1,23 @@
-@extends('layouts.admin')
+@extends('layouts.test')
 
 @section('content')
- <div class="container text-center">
-        
-        <div class="page-header">
+
+
+<div class="container text-center"> 
+
+    <div class="page-header">
             <h1>
-               <i class="fa fa-product-hunt" aria-hidden="true"></i>Categoria <small>[ Agregar Categoria ]</small>
+               <i class="fa fa-product-hunt" aria-hidden="true"></i>Categoría<small>[ Agregar Categoría ]</small>
             </h1>
-        </div>
-        
-        <div class="row">
-            <div class="col-md-offset-3 col-md-6">
+     @include('partials.errors')
+    </div>     
+       
+     <div class="row">
+            
+            <div class="column">     
                 
-                <div class="page">                
-                                    
-                 
-                      {!! Form::open(['route'=>'category.store']) !!}
+                   
+                      {!! Form::open(['route'=>'category.store','class' => 'form-horizontal']) !!}
 
                        <div class="form-group">
                             <label for="category_name">Nombre de la categoria:</label>
@@ -33,7 +35,7 @@
                             !!}
 
                         </div>
-
+                        
                         <div class="form-group">
                             <label for="descrition">Descrición:</label>
                             
@@ -49,6 +51,10 @@
                                 ) 
                             !!}
                         </div>
+                   
+                </div>
+                <div class="column">
+
 
                         <div class="form-group">
                             <label for="tag">Tag:</label>
@@ -66,7 +72,7 @@
                             !!}
                         </div>
 
-                            <div class="form-group">
+                         <div class="form-group">
                             <label for="picture">Imagen:</label>
                             
                             {!! 
@@ -80,18 +86,17 @@
                                     )
                                 ) 
                             !!}
-                        </div>                          
+                        </div>
+                </div>                       
 
-                        <div class="form-group">
+                      <div class="form-group">
                             {!! Form::submit('Guardar', array('class'=>'btn btn-primary')) !!}
                              <a href="{{ route('category_index') }}" class="btn btn-warning">Cancelar</a>
                         </div>
-                        {!! Form::close() !!}               
-                </div>                
-            </div>
-        </div>       
+                        {!! Form::close() !!}
+                
+                           
+     </div>
 </div>
-
-
-
+    
 @endsection

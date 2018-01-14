@@ -21,6 +21,7 @@ class CreateProductsTable extends Migration
             $table->string('product_name')->unique(); 
             $table->string('quatity');
             $table->string('purchase_price');
+            $table->string('sale_price');
             $table->string('discout');
             $table->string('reorder_level');
             $table->string('picture');

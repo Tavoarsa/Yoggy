@@ -11,7 +11,7 @@
 |
 */
 /*------------------ Midlewere Web----------------*/
-Route::group(['middleware' => ['web']], function () {
+
 
 
 Route::get('/', function () {
@@ -63,14 +63,40 @@ Route::get('category',[
 /*---------------------End Category------------*/
 });
 
+/*------------------Product----------------*/
+Route::resource('product','ProductController');
+
+Route::get('product',[
+
+	  'as'=>'product_index',
+	  'uses'=>'ProductController@index'
+]);
+/*---------------------End Product------------*/
+
+
+
 /*---------------------End  middleware admin------------*/
 
+/*------------------tvp----------------*/
+Route::resource('tvp','TPVController');
+
+Route::get('tpv',[
+
+	  'as'=>'tpv_index',
+	  'uses'=>'TPVController@index'
+]);
+/*---------------------End tvp------------*/
+
 });
+
+
+
+
+
+
+/*---------------------End  middleware web------------*/
 
 Route::auth();
-
-});
-/*---------------------End  middleware web------------*/
 
 
 

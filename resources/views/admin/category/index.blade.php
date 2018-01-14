@@ -1,5 +1,9 @@
-@extends('layouts.admin')
+@extends('layouts.test')
+
+
 @section('content')
+</br>
+</br>
 <div class="container text-center">
         <div class="page-header">
             <h1>
@@ -20,7 +24,7 @@
                         </tr>
                     </thead>
                     <tbody>
-                        @foreach($categories as $category)
+                        @foreach($categorys as $category)
                             <tr>
                                 <td>
                                     <a href="{{ route('category.edit', $category) }}" class="btn btn-primary">
@@ -45,10 +49,8 @@
                 </table>
             </div>
              <div align="center">
-         <a class="btn btn-primary" href="{{url('category_index')}}"><i class="fa fa-chevron-circle-left"></i>REGRESAR</a>      
+         <a class="btn btn-primary" href="{{url('admin')}}"><i class="fa fa-chevron-circle-left"></i>REGRESAR</a>      
         </div>
         </div>
-
-
     </div>
 @stop

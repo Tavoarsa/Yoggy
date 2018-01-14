@@ -1,4 +1,4 @@
-@extends('layouts.admin')
+@extends('layouts.test')
 
 @section('content')
 
@@ -6,76 +6,76 @@
 		<div class="page-header">
 			<h1>
 				<i class="fa fa-pencil" aria-hidden="true"></i>
-				Usuarios <small>[Editar Proveedor]</small>                
+				Producto <small>[Editar Producto]</small>                             
+                 
 			</h1>
 		</div>
 
 		<div class="row">
-            <div class="col-md-offset-3 col-md-6">                
-                <div class="page">             
-                    @include('partials.errors')
-                    {!! Form::model($provider, array('route' => array('provider.update', $provider))) !!}
+            <div class="col-md-offset-3 col-md-6">
+                
+                <div class="page">
+                      @include('partials.errors')                 
+                    
+                    {!! Form::model($product, array('route' => array('product.update', $product))) !!}
+                      {{ csrf_field() }}
                     
                         <input type="hidden" name="_method" value="PUT">
 
-                        <div class="form-group">
-                            <label for="supplier_name">Nombre de la empresa:</label>
+                       <div class="form-group">
+                            <label for="product_code">Codigo:</label>
                             
                             {!! 
                                 Form::text(
-                                    'supplier_name', 
+                                    'product_code', 
                                     null, 
                                     array(
                                         'class'=>'form-control',
-                                        'placeholder' => 'Ingresa el nombre de la empresa...',
+                                        'placeholder' => 'Ingresa el codigo..',
                                         'autofocus' => 'autofocus'
                                     )
                                 ) 
                             !!}
+
                         </div>
 
-                        <div class="form-group">
-                            <label for="contact_name">Nombre del Contacto:</label>
-                            
-                            {!! 
-                                Form::text(
-                                    'contact_name', 
-                                    null, 
-                                    array(
-                                        'class'=>'form-control',
-                                        'placeholder' => 'Ingresa el nombre del contacto...',
-                                        'autofocus' => 'autofocus'
-                                    )
-                                ) 
-                            !!}
+
+                             
+                    <div class="form-group">
+                            <label for="providers_id">Proveedor:</label>
+                                                        
+                             {!!Form::select('providers_id',$provider,$product->providers_id,["class" => "form-control"])!!}
+                              <a href="#"><i class="fa fa-info"   aria-hidden="true"></i>Detalle</a>
                         </div>
 
-                        <div class="form-group">
-                            <label for="supplier_position">Puesto del contacto:</label>
-                            
-                            {!! 
-                                Form::text(
-                                    'supplier_position', 
-                                    null, 
-                                    array(
-                                        'class'=>'form-control',
-                                        'placeholder' => 'Puesto del contacto',
-                                        'autofocus' => 'autofocus'
-                                    )
-                                ) 
-                            !!}
-                        </div>
+                         <div class="form-group">
+                            <label for="categories_id">Categoria:</label>
+                                                        
+                             {!!Form::select('categories_id',$category,$product->categories_id,["class" => "form-control"])!!}
+                              <a href="#"><i class="fa fa-info"   aria-hidden="true"></i>Detalle</a>
+                        </div>                 
 
+
+
+                      
+
+
+
+
+                                        
+                
+
+                     
                             <div class="form-group">
-                            <label for="email">Email:</label>
+                            <label for="product_name">Nombre del Producto:</label>
                             
                             {!! 
                                 Form::text(
-                                    'email', 
+                                    'product_name', 
                                     null, 
                                     array(
                                         'class'=>'form-control',
-                                        'placeholder' => 'Ingresa el email...',
+                                        'placeholder' => 'Ingresa el nombre del Producto...',
                                         'autofocus' => 'autofocus'
                                     )
                                 ) 
@@ -83,15 +83,15 @@
                         </div>
 
                            <div class="form-group">
-                            <label for="phone">Telefono:</label>
+                            <label for="quatity">Cantidad:</label>
                             
                             {!! 
                                 Form::text(
-                                    'phone', 
+                                    'quatity', 
                                     null, 
                                     array(
                                         'class'=>'form-control',
-                                        'placeholder' => 'Ingresa el numero de telefono...',
+                                        'placeholder' => 'Ingresa cantidad..',
                                         'autofocus' => 'autofocus'
                                     )
                                 ) 
@@ -99,15 +99,15 @@
                         </div>
 
                         <div class="form-group">
-                            <label for="address">Dirección:</label>
+                            <label for="purchase_price">Precio de compra:</label>
                             
                             {!! 
                                 Form::text(
-                                    'address', 
+                                    'purchase_price', 
                                     null, 
                                     array(
                                         'class'=>'form-control',
-                                        'placeholder' => 'Ingresa la dirección...',
+                                        'placeholder' => 'Ingresa el Precio de compra...',
                                         'autofocus' => 'autofocus'
                                     )
                                 ) 
@@ -115,15 +115,15 @@
                         </div>
 
                         <div class="form-group">
-                            <label for="postal_code">Codigo Postal:</label>
+                            <label for="sale_price">Precio de Venta:</label>
                             
                             {!! 
                                 Form::text(
-                                    'postal_code', 
+                                    'sale_price', 
                                     null, 
                                     array(
                                         'class'=>'form-control',
-                                        'placeholder' => 'Ingresa el Codigo Postal...',
+                                        'placeholder' => 'Ingresa el Precio de Venta...',
                                         'autofocus' => 'autofocus'
                                     )
                                 ) 
@@ -133,58 +133,60 @@
                     
 
                         <div class="form-group">
-                            <label for="city">Cuidad:</label>
+                            <label for="discout">Descuento:</label>
+                            
+                            {!! 
+                                Form::number(
+                                    'discout', 
+                                    null, 
+                                    array(
+                                        'class'=>'form-control',
+                                        'placeholder' => 'Ingresa el descuento del producto..',
+                                        'autofocus' => 'autofocus'
+                                    )
+                                ) 
+                            !!}<a>%</a>
+                        </div>                    
+
+                        
+
+                         <div class="form-group">
+                            <label for="reorder_level">Nivel de reeorden</label>
+                            
+                            {!! 
+                                Form::number(
+                                    'reorder_level', 
+                                    null, 
+                                    array(
+                                        'class'=>'form-control',
+                                        'placeholder' => 'Ingrese el nivel de reorden...',
+                                        'autofocus' => 'autofocus'
+                                    )
+                                ) 
+                            !!}
+                        </div> 
+
+                         <div class="form-group">
+                            <label for="picture">Imagen</label>
                             
                             {!! 
                                 Form::text(
-                                    'city', 
+                                    'picture', 
                                     null, 
                                     array(
                                         'class'=>'form-control',
-                                        'placeholder' => 'Ingresa el nombre de la Cuidad...',
+                                        'placeholder' => 'Ingrese una imagen',
                                         'autofocus' => 'autofocus'
                                     )
                                 ) 
                             !!}
-                        </div>
-
-                     
-
-                        <div class="form-group">
-                            <label for="status">Status:</label>
-                            
-                            {{ Form::select('status', ['Activo', 'Inactivo']) }} 
-
-                        </div>
-
-                        <div class="form-group">
-                            <label for="way_pay">Forma de pago:</label>
-                            
-                             
-                            {{ Form::select('way_pay', ['Contado', 'Credito']) }} 
-                        </div>
-
-                         <div class="form-group">
-                            <label for="notes">Notas:</label>
-                            
-                            {!! 
-                                Form::textarea(
-                                    'notes', 
-                                    null, 
-                                    array(
-                                        'class'=>'form-control',
-                                        'placeholder' => 'Ingrese notas relevantes...',
-                                        'autofocus' => 'autofocus'
-                                    )
-                                ) 
-                            !!}
-                        </div>  
+                        </div>   
                            
                         
                         
                         <div class="form-group">
                             {!! Form::submit('Actualizar', array('class'=>'btn btn-primary')) !!}
-                            <a href="{{ route('provider_index') }}" class="btn btn-warning">Cancelar</a>
+                            <a href="{{ route('product_index') }}" class="btn btn-warning">Cancelar</a>
                         </div>
                     
                     {!! Form::close() !!}
