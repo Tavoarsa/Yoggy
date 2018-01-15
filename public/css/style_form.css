@@ -13,6 +13,9 @@ width: 49%;
 padding: 27px;
 height: 57px; /* Should be removed. Only for demonstration */
 }
+.btn_style{
+    background: #71aa48;
+}
 
 /* Clear floats after the columns */
 .row:after {

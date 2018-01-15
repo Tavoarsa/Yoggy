@@ -34,9 +34,8 @@
 
                             
                         </div>
-
-
-                         <div class="form-group column">
+                        
+                        <div class="form-group column">
                             <label for="providers_id">Proveedor:</label>
                                                         
                              {!!Form::select('providers_id',$provider,["class" => "form-control"])!!}
@@ -115,9 +114,7 @@
                             !!}
                         </div>
 
-                    
-
-                        <div class="form-group column">
+                          <div class="form-group column">
                             <label for="discout">Descuento:</label>
                             
                             {!! 
@@ -132,8 +129,6 @@
                                 ) 
                             !!}<a>%</a>
                         </div>                    
-
-                        
 
                          <div class="form-group column">
                             <label for="reorder_level">Nivel de reeorden</label>
