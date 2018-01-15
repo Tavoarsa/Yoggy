@@ -8,6 +8,7 @@
         <!-- Styles -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
     <link type="text/css" rel="stylesheet" href="../css/style.css">
+    <link type="text/css" rel="stylesheet" href="../css/style_form.css">
     
         <!-- Angular -->
      <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.23/angular.min.js"></script>
@@ -39,7 +40,7 @@
                     </div>
                 </a>              
 
-                <a class="nav navbar-nav" href="{{ url('/yoggy') }}">
+                <a class="nav navbar-nav" href="{{ url('/product') }}">
 
                     <div id="logo" class="stylesLogo logo-img">
                         <img id="productos" class="imagenPerfil" src="/imagen/ice-cream1.png" >

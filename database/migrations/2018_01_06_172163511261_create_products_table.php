@@ -20,8 +20,8 @@ class CreateProductsTable extends Migration
             $table->foreign('categories_id')->references('id')->on('categories');
             $table->string('product_name')->unique(); 
             $table->string('quatity');
-            $table->string('purchase_price');
-            $table->string('sale_price');
+            $table->float('purchase_price');
+            $table->float('sale_price');
             $table->string('discout');
             $table->string('reorder_level');
             $table->string('picture');
