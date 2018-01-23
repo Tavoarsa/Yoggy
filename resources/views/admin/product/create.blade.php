@@ -1,23 +1,22 @@
-@extends('layouts.test')
+@extends('layouts.admin')
 
 @section('content')
- <div class="container ">
+ <div class="container text-center ">
         
         <div class="page-header">
             <h1>
                <i class="fa fa-product-hunt" aria-hidden="true"></i> Producto<small>[ Agregar Producto ]</small>
             </h1>
+             @include('partials.errors')
         </div>
         
-        <div class="row">
-            <div >
+        <div class="row">            
                 
-                <div class="page"> 
-                 @include('partials.errors')
+                <div class="column">                
 
                                               
                  
-                      {!! Form::open(['route'=>'product.store','class' => 'form-inline']) !!}
+                      {!! Form::open(['route'=>'product.store','class' => 'form-horizontal']) !!}
 
                        <div class="form-group">
                             <label for="product_code">Codigo:</label>
@@ -84,6 +83,9 @@
                                 ) 
                             !!}
                         </div>
+                </div>
+
+                <div class="column">
 
                         <div class="form-group">
                             <label for="purchase_price">Precio de compra:</label>
@@ -167,7 +169,8 @@
                                     )
                                 ) 
                             !!}
-                        </div>   
+                        </div>
+                </div>   
 
                         <div class="form-group">
                             {!! Form::submit('Guardar', array('class'=>'btn btn-primary')) !!}
@@ -175,8 +178,8 @@
                         </div>
                         {!! Form::close() !!}                   
                     
-                </div>                
-            </div>
+                              
+           
         </div>        
 </div>
 @endsection

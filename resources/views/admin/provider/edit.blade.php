@@ -3,6 +3,7 @@
 @section('content')
 
 <div class="container text-center">
+
 		<div class="page-header">
 			<h1>
 				<i class="fa fa-pencil" aria-hidden="true"></i>
