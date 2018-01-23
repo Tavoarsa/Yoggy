@@ -9,8 +9,10 @@ use App\Http\Requests\EditUserRequest;
 
 class UserController extends Controller
 {
-    /*
-     * Display a listing of the resource.
+
+
+     /* Display a listing of the resource.
+         master
      *
      * @return \Illuminate\Http\Response
      */
